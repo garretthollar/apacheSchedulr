@@ -16,6 +16,9 @@ var indexLogin = new Vue({
                 this.errors.push(response);
                 console.log(info);
             })
+            .catch(function(error){
+                console.log("didn't work");
+            });
         
         console.log("After");
     },
