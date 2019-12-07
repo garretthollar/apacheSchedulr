@@ -8,11 +8,13 @@ var indexLogin = new Vue({
         errors:[],
     },
     created: function() {
-        axios.get('josh.danilafe.com:23450')
+        console.log("Before");
+        axios.get('josh.danilafe.com:23450/myinfo')
             .then(response => {
                 info = response;
                 console.log(info);
             })
+        console.log("After");
     },
     
     methods: {
