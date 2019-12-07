@@ -1,5 +1,5 @@
 var scheduleRequest = new Vue({
-    el: '#semestersOffModal',
+    el: '#schedule_requests',
     data: {
         maxCredits: "",
         semestersOff: [],
