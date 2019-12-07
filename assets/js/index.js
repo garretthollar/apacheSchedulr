@@ -7,6 +7,9 @@ var indexLogin = new Vue({
         },
         errors:[],
     },
+    created: function() {
+        console.log("Functioning");
+    },
     
     methods: {
         getHomePage() {
