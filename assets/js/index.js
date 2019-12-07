@@ -18,6 +18,7 @@ var indexLogin = new Vue({
             })
             .catch(function(error){
                 console.log("didn't work");
+                console.log(error);
             });
         
         console.log("After");
