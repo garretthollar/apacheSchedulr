@@ -3,6 +3,7 @@ var home = new Vue({
     data: {
     },
     beforeCreate: function() {
+        console.log(this.$cookies.isKey("jwt"));
         console.log("Before");
         axios.get('http://josh.danilafe.com:23450/myinfo')
             .then(response => {
