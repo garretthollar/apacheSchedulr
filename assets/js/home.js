@@ -4,7 +4,6 @@ var home = new Vue({
     },
     beforeCreate: function() {
         console.log(this.$cookies.isKey("jwt"));
-        console.log("Before");
         axios.get('http://josh.danilafe.com:23450/myinfo')
             .then(response => {
                 console.log(response)
@@ -17,7 +16,5 @@ var home = new Vue({
                 console.log("didn't work");
                 console.log(error);
             });
-        
-        console.log("After");
     },
 })
