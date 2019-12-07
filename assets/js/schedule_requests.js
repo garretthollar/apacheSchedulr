@@ -1,9 +1,9 @@
 var scheduleRequest = new Vue({
     el: '#schedule-requests',
     data: {
-        maxCredits = "",
+        maxCredits: "",
         semestersOff: [],
-        semester = ''
+        semester:''
     },
     beforeCreate: function() {
         console.log(this.$cookies.isKey("jwt"));
