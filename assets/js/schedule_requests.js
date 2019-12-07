@@ -24,6 +24,7 @@ var scheduleRequest = new Vue({
     methods: {
         addSemester () {
             this.semestersOff.push(semester);
+            console.log("YEET");
         },
     }
 })
