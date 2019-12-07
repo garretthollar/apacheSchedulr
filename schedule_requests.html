@@ -72,86 +72,6 @@
                 </div>
             </div>
         </div>
-        <div class="card">
-            <div class="card-header" role="tab">
-                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="true" aria-controls="accordion-1 .item-2" href="#accordion-1 .item-2">Upper Level Electives</a></h5>
-            </div>
-            <div class="collapse show item-2" role="tabpanel" data-parent="#accordion-1">
-                <div class="card-body">
-                    <div id="upperLevelTable">
-                        <div class="table-responsive">
-                            <table class="table">
-                                <thead>
-                                    <tr>
-                                        <th style="width: 50%;">Class</th>
-                                        <th style="width: 25%;">Code</th>
-                                        <th class="text-right" style="width: 25%;"><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#upperLevelElectivesModal">Add</button></th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>Cell 1</td>
-                                        <td>Cell 2</td>
-                                        <td class="d-lg-flex justify-content-lg-end"><button class="btn btn-danger btn-sm d-sm-flex justify-content-md-end justify-content-lg-end justify-content-xl-end" type="button">Delete Class</button></td>
-                                    </tr>
-                                </tbody>
-                            </table>
-                        </div>
-                        <div class="modal fade" role="dialog" tabindex="-1" id="upperLevelElectivesModal">
-                            <div class="modal-dialog" role="document">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h4 class="modal-title">Modal Title</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                    <div class="modal-body">
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group"><label class="text-info">Course Prefix</label>
-                                                    <div class="dropdown" v-model="form.prefix"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                                                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a></div>
-                                                    </div><label class="text-info" style="margin-top: 5px;">Course Title</label>
-                                                    <div class="dropdown" v-model="form.title"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                                                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                    </div>
-                                    <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="card">
-            <div class="card-header" role="tab">
-                <h5 class="mb-0"><a data-toggle="collapse" aria-expanded="false" aria-controls="accordion-1 .item-3" href="#accordion-1 .item-3">Class:Semester Pairings</a></h5>
-            </div>
-            <div class="collapse item-3" role="tabpanel" data-parent="#accordion-1">
-                <div class="card-body">
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 50%;">Class</th>
-                                    <th style="width: 25%;">Semester</th>
-                                    <th class="text-right" style="width: 25%;"><button class="btn btn-primary" type="button" data-toggle="modal" data-target="#classSemesterPairingsModal">Add</button></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>Cell 1</td>
-                                    <td>Cell 2</td>
-                                    <td class="d-lg-flex justify-content-lg-end"><button class="btn btn-danger btn-sm d-sm-flex justify-content-md-end justify-content-lg-end justify-content-xl-end" type="button">Delete Class</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="semestersOffModal" data-="">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
@@ -164,32 +84,6 @@
                                 <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
                                     <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
                                 </div><label class="text-info" style="margin-top: 5px;">Reasoning</label><input class="border-dark form-control" type="text"></div>
-                        </form>
-                    </div>
-                </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
-            </div>
-        </div>
-    </div>
-    <div class="modal fade" role="dialog" tabindex="-1" id="classSemesterPairingsModal">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h4 class="modal-title">Schedule:Semester Pairings</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                <div class="modal-body">
-                    <div class="modal-body">
-                        <form>
-                            <div class="form-group"><label class="text-info">Course Prefix</label>
-                                <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                                </div><label class="text-info" style="margin-top: 5px;">Course Title</label>
-                                <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" disabled="">Dropdown </button>
-                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                                </div><label class="text-info" style="margin-top: 5px;">Semester</label>
-                                <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                                </div>
-                            </div>
                         </form>
                     </div>
                 </div>
