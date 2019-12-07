@@ -9,6 +9,14 @@ var indexLogin = new Vue({
     },
     created: function() {
         console.log("Before");
+        if (this.$cookies.isKey("jwt")) {
+            console.log("Cookie exists");
+        }
+        else{
+            this.$cookies.set("jwt","cookie!", "30MIN")
+            console.log("Cookie made!");
+        }
+
         axios.get('http://josh.danilafe.com:23450/myinfo')
             .then(response => {
                 console.log(response)
