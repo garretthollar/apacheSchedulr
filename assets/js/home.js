@@ -2,7 +2,7 @@ var home = new Vue({
     el: '#home',
     data: {
     },
-    created: function() {
+    beforeCreate: function() {
         console.log("Before");
         axios.get('http://josh.danilafe.com:23450/myinfo')
             .then(response => {
