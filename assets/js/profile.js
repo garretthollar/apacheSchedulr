@@ -9,7 +9,7 @@ var profile = new Vue({
         },
     },
     mounted: function() {
-        axios.get('/myinfo')
+        axios.get('http://josh.danilafe.com:23450/myinfo')
             .then(response=> {
                 console.log(response);
                 this.form.FirstName = response.data.FirstName;
