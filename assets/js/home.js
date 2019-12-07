@@ -8,6 +8,7 @@ var home = new Vue({
             .then(response => {
                 console.log(response)
                 if (response.data.ID == 0){
+                    console.log("Not logged in, returning to index");
                     window.location.hfef = "/index.html";
                 }
             })
