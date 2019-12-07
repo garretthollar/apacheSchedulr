@@ -83,13 +83,13 @@
                         <form>
                             <div class="form-group"><label class="text-info">Semester</label>
                                 <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" v-model="semester">{{semester}} </button>
-                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-on:click="semester = 'Spring 2020'">Spring 2020</a><a class="dropdown-item" role="presentation" href="#">Summer 2020</a><a class="dropdown-item" role="presentation" href="#">Fall 2020</a>
-                                    <a class="dropdown-item" role="presentation" href="#">Spring 2021</a><a class="dropdown-item" role="presentation" href="#" v-on:click="semester = 'Summer 2021'">Summer 2021</a><a class="dropdown-item" role="presentation" href="#">Fall 2021</a></div>
+                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-on:click="semester = 'Spring 2020'">Spring 2020</a><a class="dropdown-item" role="presentation" v-on:click="semester = 'Summer 2020'">Summer 2020</a><a class="dropdown-item" role="presentation" v-on:click="semester = 'Fall 2020'">Fall 2020</a>
+                                    <a class="dropdown-item" role="presentation" v-on:click="semester = 'Spring 2021'">Spring 2021</a><a class="dropdown-item" role="presentation" href="#" v-on:click="semester = 'Summer 2021'">Summer 2021</a><a class="dropdown-item" role="presentation" v-on:click="semester = 'Fall 2021'">Fall 2021</a></div>
                                 </div><label class="text-info" style="margin-top: 5px;">Reasoning</label><input class="border-dark form-control" type="text"></div>
                         </form>
                     </div>
                 </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" v-on:click="addSemester">Save</button></div>
             </div>
         </div>
     </div>
