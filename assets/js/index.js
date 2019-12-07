@@ -9,7 +9,7 @@ var indexLogin = new Vue({
     },
     created: function() {
         console.log("Before");
-        axios.get('josh.danilafe.com:23450/myinfo')
+        axios.get('http://josh.danilafe.com:23450/myinfo')
             .then(response => {
                 console.log("inside")
                 info = response;
