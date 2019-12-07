@@ -12,7 +12,7 @@ var indexLogin = new Vue({
         axios.get('http://josh.danilafe.com:23450/myinfo')
             .then(response => {
                 console.log(response)
-                if (response.data != 0){
+                if (response.data.ID != 0){
                     console.log("Already logged in");
                     window.location.hfef = "/home.html";
                 }
