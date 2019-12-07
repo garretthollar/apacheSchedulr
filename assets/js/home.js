@@ -9,7 +9,7 @@ var home = new Vue({
                 console.log(response)
                 if (response.data.ID == 0){
                     console.log("Not logged in, returning to index");
-                    window.location.hfef = "/index.html";
+                    window.location.hfef = "josh.danilfe.com/index.html";
                 }
             })
             .catch(function(error){
