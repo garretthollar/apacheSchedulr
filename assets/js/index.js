@@ -13,6 +13,7 @@ var indexLogin = new Vue({
             .then(response => {
                 console.log(response)
                 if (response.data != 0){
+                    console.log("Already logged in");
                     window.location.hfef = "/home.html";
                 }
             })
@@ -35,7 +36,7 @@ var indexLogin = new Vue({
         
         loginSubmit() {
             this.errors = [];
-            axios.post(`/login`,{
+            axios.post(`http://josh.danilafe.com:23450/login`,{
                 Username: this.form.email,
                 Password: this.form.password,
                 Remember_Me: 'true'
@@ -50,7 +51,7 @@ var indexLogin = new Vue({
                 else
                 {
                     console.log("we're in!");
-                        window.location.href = "/home";
+                        window.location.href = "/home.html";
                     
                 }
             })
