@@ -12,6 +12,7 @@ var indexLogin = new Vue({
         axios.get('josh.danilafe.com:23450/myinfo')
             .then(response => {
                 info = response;
+                this.errors.push(response);
                 console.log(info);
             })
         console.log("After");
