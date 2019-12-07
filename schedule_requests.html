@@ -23,7 +23,7 @@
 <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 
-<body>
+<body id = "schedule-requests">
     <nav class="navbar navbar-light navbar-expand-md sticky-top bg-info navigation-clean-button" style="height:80px;background-color:#37434d;color:#ffffff;">
         <div class="container-fluid"><a class="navbar-brand" href="#" style="font-size: 200%;">&nbsp;SchedulR</a><button data-toggle="collapse" class="navbar-toggler" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div
@@ -82,7 +82,7 @@
                         <form>
                             <div class="form-group"><label class="text-info">Semester</label>
                                 <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                                    <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">Spring 2020</a><a class="dropdown-item" role="presentation" href="#">Summer 2020</a><a class="dropdown-item" role="presentation" href="#">Fall 2020</a>
+                                    <div class="dropdown-menu" role="menu" v-model="semester"><a class="dropdown-item" role="presentation" href="#">Spring 2020</a><a class="dropdown-item" role="presentation" href="#">Summer 2020</a><a class="dropdown-item" role="presentation" href="#">Fall 2020</a>
                                     <a class="dropdown-item" role="presentation" href="#">Spring 2021</a><a class="dropdown-item" role="presentation" href="#">Summer 2021</a><a class="dropdown-item" role="presentation" href="#">Fall 2021</a></div>
                                 </div><label class="text-info" style="margin-top: 5px;">Reasoning</label><input class="border-dark form-control" type="text"></div>
                         </form>
