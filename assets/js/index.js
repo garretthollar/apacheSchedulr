@@ -11,10 +11,9 @@ var indexLogin = new Vue({
         console.log("Before");
         axios.get('http://josh.danilafe.com:23450/myinfo')
             .then(response => {
-                console.log("inside")
-                info = response;
-                this.errors.push(response);
-                console.log(info);
+                console.log(response)
+                if (response.data != 0)
+                    window.location.hfef = "/home.html"
             })
             .catch(function(error){
                 console.log("didn't work");
