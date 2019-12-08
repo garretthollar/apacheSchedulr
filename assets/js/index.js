@@ -40,6 +40,7 @@ var indexLogin = new Vue({
         
         loginSubmit() {
             this.errors = [];
+            let self = this;
             axios.post(`https://api.schedulr.xyz/login`,{
                 email: this.form.email,
                 password: this.form.password
@@ -65,7 +66,7 @@ var indexLogin = new Vue({
                 console.log(error);
                 if (error.response.status == 401)
                 {
-                    this.errors.push("Username or Password are incorrect");
+                    self.errors.push("Username or Password are incorrect");
                 }
             });
         },
