@@ -6,7 +6,7 @@ var classTable = new Vue({
     created: function() {
         axios.get('https://api.schedulr.xyz/my_needed',{
             params: {
-                Authorization: this.$cookies.get("access_token_cookie")
+                access_token: this.$cookies.get("access_token_cookie")
             }
         })
             .then(response=> {
