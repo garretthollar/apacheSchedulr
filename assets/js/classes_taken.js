@@ -18,12 +18,12 @@ var classTable = new Vue({
 var scheduleModal = new Vue({
         el: "#classesTaken_addClassModal", 
         data: {
-        users:[]
+        classes:[]
     },
     mounted: function() {
-        axios.get('https://jsonplaceholder.typicode.com/users')
+        axios.get('https://api.schedulr.xyz/my_needed')
             .then(response=> {
-                this.users = response.data;
+                this.classes = response.data;
                 console.log(response);
             })
             .catch(error => {
