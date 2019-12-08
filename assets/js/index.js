@@ -12,23 +12,19 @@ var indexLogin = new Vue({
         if (this.$cookies.isKey("jwt")) {
             console.log("Cookie exists");
         }
-        else{
-            this.$cookies.set("jwt","cookie!", "30MIN")
-            console.log("Cookie made!");
-        }
 
-        axios.get('http://josh.danilafe.com:23450/myinfo')
-            .then(response => {
-                console.log(response)
-                if (response.data.ID != 0){
-                    console.log("Already logged in");
-                    window.location.hfef = "/home.html";
-                }
-            })
-            .catch(function(error){
-                console.log("didn't work");
-                console.log(error);
-            });
+        // axios.get('http://josh.danilafe.com:23450/myinfo')
+        //     .then(response => {
+        //         console.log(response)
+        //         if (response.data.ID != 0){
+        //             console.log("Already logged in");
+        //             window.location.hfef = "/home.html";
+        //         }
+        //     })
+        //     .catch(function(error){
+        //         console.log("didn't work");
+        //         console.log(error);
+        //     });
         
         console.log("After");
     },
