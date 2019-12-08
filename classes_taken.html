@@ -74,7 +74,7 @@
                         <div class="form-group">
                             <label class="text-info" style="margin-top: 5px;">Course Title</label>
                             <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-for="course in courses">{{course.name}}</a></div>
+                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-for="course in courses" v-for="console.log('Hi');">{{course.name}}</a></div>
                             </div>
                         </div>
                     </form>
