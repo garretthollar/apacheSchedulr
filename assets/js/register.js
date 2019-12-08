@@ -12,7 +12,7 @@ var register = new Vue({
         registerSubmit() {
             this.errors = [];
             let self = this;
-            axios.port('https://api.schedulr.xyz/signup',{
+            axios.post('https://api.schedulr.xyz/signup',{
                 email: this.form.email,
                 password: this.form.password,
                 name: this.form.name
