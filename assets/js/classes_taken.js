@@ -25,7 +25,11 @@ var scheduleModal = new Vue({
         courses:[]
     },
     mounted: function() {
-        axios.get('https://api.schedulr.xyz/my_needed')
+        axios.get('https://api.schedulr.xyz/my_needed', {
+            headers: {
+                Authorization: "Bearer " + this.$cookies.get("access_token_cookie")
+            }
+        })
             .then(response=> {
                 this.courses = response.data;
                 console.log(response);
