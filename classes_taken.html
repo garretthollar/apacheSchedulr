@@ -73,8 +73,8 @@
                     <form>
                         <div class="form-group">
                             <label class="text-info" style="margin-top: 5px;">Course Title</label>
-                            <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" disabled="">Dropdown </button>
-                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
+                            <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
+                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-for="course in courses">First Item</a></div>
                             </div>
                         </div>
                     </form>
