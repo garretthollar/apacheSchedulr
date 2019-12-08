@@ -59,9 +59,9 @@ var indexLogin = new Vue({
             .catch(function(error){
                 console.log("didn't work");
                 console.log(error);
-                if (error.response.status == 409)
+                if (error.response.status == 401)
                 {
-                    self.errors.push("Account already exists");
+                    self.errors.push("Incorrect Username or Password");
                 }
             });
         },
