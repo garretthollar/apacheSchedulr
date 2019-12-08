@@ -63,6 +63,10 @@ var indexLogin = new Vue({
             .catch(function(error){
                 console.log("didn't work");
                 console.log(error);
+                if (error.status == 401)
+                {
+                    this.errors.push("Username or Password are incorrect");
+                }
             });
         },
         
