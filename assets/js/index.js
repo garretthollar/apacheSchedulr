@@ -62,6 +62,7 @@ var indexLogin = new Vue({
             })
             .catch(response => {
                 if (response.status == 401){
+                    console.log(repsonse);
                     this.errors.push("Username or Password are incorrect");
                 }
             })
