@@ -40,7 +40,7 @@ var indexLogin = new Vue({
         
         loginSubmit() {
             this.errors = [];
-            axios.post(`api.schedulr.xyz/login`,{
+            axios.post(`https://api.schedulr.xyz/login`,{
                 email: this.form.email,
                 password: this.form.password
             })
