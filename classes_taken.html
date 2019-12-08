@@ -46,46 +46,45 @@
         <div class="col d-sm-flex d-lg-flex justify-content-end justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end"><button class="btn btn-primary" type="button" style="margin: 5%;margin-top: 5%;margin-right: 0px;margin-bottom: 5%;margin-left: 5%;" data-toggle="modal" data-target="#classesTaken_addClassModal">Add Class</button><button class="btn btn-primary" type="button"
                 style="margin: 5%;">Next Step</button></div>
     </div>
-                    <div class="table-responsive" id="classesTaken_classTable">
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th style="width: 50%;">Class</th>
-                                    <th style="width: 25%;">Code</th>
-                                    <th class="text-right" style="width: 25%;"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr v-for="course in courses">
-                                    <td>{{course.name}}</td>
-                                    <td>{{course.code}}</td>
-                                    <td class="d-lg-flex justify-content-lg-end"><button class="btn btn-danger btn-sm d-sm-flex justify-content-md-end justify-content-lg-end justify-content-xl-end" type="button">Delete Class</button></td>
-                                </tr>
-                            </tbody>
-                        </table>
-                        <div class="modal fade" role="dialog" tabindex="-1" id="classesTaken_addClassModal">
-                                <div class="modal-dialog" role="document">
-                                    <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h4 class="modal-title">Add a Class</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
-                                        <div class="modal-body">
-                                            <form>
-                                                <div class="form-group"><label class="text-info">Course Prefix</label>
-                                                    <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                                                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-for="class in classes">{{class.name}}</a></div>
-                                                    </div><label class="text-info" style="margin-top: 5px;">Course Title</label>
-                                                    <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" disabled="">Dropdown </button>
-                                                        <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
-                                                    </div>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
-                                    </div>
-                                </div>
+    <div class="table-responsive" id="classesTaken_classTable">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th style="width: 50%;">Class</th>
+                    <th style="width: 25%;">Code</th>
+                    <th class="text-right" style="width: 25%;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr v-for="course in courses">
+                    <td>{{course.name}}</td>
+                    <td>{{course.code}}</td>
+                    <td class="d-lg-flex justify-content-lg-end"><button class="btn btn-danger btn-sm d-sm-flex justify-content-md-end justify-content-lg-end justify-content-xl-end" type="button">Delete Class</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="modal fade" role="dialog" tabindex="-1" id="classesTaken_addClassModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Add a Class</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                <div class="modal-body">
+                    <form>
+                        <div class="form-group"><label class="text-info">Course Prefix</label>
+                            <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
+                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-for="class in classes">{{class.name}}</a></div>
+                            </div><label class="text-info" style="margin-top: 5px;">Course Title</label>
+                            <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button" disabled="">Dropdown </button>
+                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" href="#">First Item</a><a class="dropdown-item" role="presentation" href="#">Second Item</a><a class="dropdown-item" role="presentation" href="#">Third Item</a></div>
                             </div>
-                    </div>
-    
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+            </div>
+        </div>
+    </div>
     <script>src="classes_taken.js"</script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
