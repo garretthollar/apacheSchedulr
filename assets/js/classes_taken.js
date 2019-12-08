@@ -4,7 +4,7 @@ var classTable = new Vue({
         courses:[]
     },
     created: function() {
-        axios.get('https://api.schedulr.xyz/my_needed',{
+        axios.get('https://api.schedulr.xyz/my_taken',{
             headers: {
                 Authorization: "Bearer " + this.$cookies.get("access_token_cookie")
             }
@@ -22,7 +22,8 @@ var classTable = new Vue({
 var scheduleModal = new Vue({
         el: "#classesTaken_addClassModal", 
         data: {
-        courses:[]
+        courses:[],
+        newCourse:''
     },
     mounted: function() {
         axios.get('https://api.schedulr.xyz/my_needed', {
