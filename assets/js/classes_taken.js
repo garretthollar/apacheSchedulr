@@ -11,6 +11,7 @@ var classTable = new Vue({
         })
             .then(response=> {
                 this.courses = response.data;
+                console.log(response);
             })
             .catch(error => {
                 console.log(error);
