@@ -33,6 +33,7 @@
                     <form v-on:submit.prevent="registerSubmit">
                         <div class="form-row">
                             <div class="col">
+                                <p v-for="error in errors" style="color: rgba(215,50,50,0.62);">{{ error }}</p>
                                 <div class="form-group"><label class="text-secondary">Full Name</label><input class="form-control" type="text" required="" v-model="form.name"></div>
                             </div>
                         </div>
