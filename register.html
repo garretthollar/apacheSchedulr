@@ -41,7 +41,7 @@
                         <div class="form-group"><label class="text-secondary">Password</label><input class="form-control" type="password" required="" v-model="form.password"></div>
                         <div class="form-group"><label class="text-secondary">Major</label>
                             <div class="dropdown"><button class="btn btn-outline-info btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="">Dropdown </button>
-                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-for="program in programs" v-on:click="program = 'hello'">{{program.prog_id}} {{program.name}}</a></div>
+                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-for="program in programs" v-on:click="program = 'hello';">{{program.prog_id}} {{program.name}}</a></div>
                             </div>
                         </div><button class="btn btn-info btn-block mt-2" type="submit">Register</button></form>
                     <p class="mt-3 mb-0"><a class="text-info small" href="/index.html">Already have an account? Login here.</a></p>
