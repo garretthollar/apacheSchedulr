@@ -26,6 +26,11 @@ var scheduleModal = new Vue({
         courses:[],
         newCourse:''
     },
+    methods: {
+        printHi() {
+            console.log("Hi");
+        }
+    },
     mounted: function() {
         axios.get('https://api.schedulr.xyz/my_needed', {
             headers: {
