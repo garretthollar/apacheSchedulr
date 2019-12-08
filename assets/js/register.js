@@ -6,7 +6,15 @@ var register = new Vue({
             password:'',
             name:''
         },
-        errors:[]
+        errors:[],
+        programs: []
+    },
+    created: function() {
+        axios.get('https://api.schedulr.xyz/list_programs')
+            .then(response => {
+                this.programs = response.data;
+            })
+            
     },
     methods: {
         registerSubmit() {
