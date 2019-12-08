@@ -47,17 +47,12 @@ var indexLogin = new Vue({
             })
             .then(response => {
                 console.log(response);
-                if (response.status == 401)
-                {
-                    this.errors.push("Username or Password are incorrect");
-                }
-                else if (response.status == 200)
+                if (response.status == 200)
                 {
                     console.log("we're in!");
-                    this.$cookies.set(response.data.access_token,"cookie!", "30MIN");
+                    this.$cookies.set("jwt",response.data.access_token, "30MIN");
                     console.log("cookie has bene set");
-
-                        window.location.href = "/home.html";
+                    window.location.href = "/home.html";
                     
                 }
             })
