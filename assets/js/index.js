@@ -45,20 +45,21 @@ var indexLogin = new Vue({
         loginSubmit() {
             this.errors = [];
             axios.post(`http://josh.danilafe.com:23450/login`,{
-                Username: this.form.email,
-                Password: this.form.password,
-                Remember_Me: 'true'
+                email: this.form.email,
+                password: this.form.password
             })
             .then(response => {
                 console.log(response);
-                if (response.data.User == 0)
+                if (response.status == 401)
                 {
                     this.errors.push("Username or Password are incorrect");
-                    console.log("You suck");
                 }
-                else
+                else if (response.status == 200)
                 {
                     console.log("we're in!");
+                    this.$cookies.set(response.data.access_token,"cookie!", "30MIN");
+                    console.log("cookie has bene set");
+
                         window.location.href = "/home.html";
                     
                 }
