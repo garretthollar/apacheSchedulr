@@ -4,7 +4,8 @@ var register = new Vue({
         form: {
             email:'',
             password:'',
-            name:''
+            name:'',
+            program:''
         },
         errors:[],
         programs: []
@@ -14,7 +15,7 @@ var register = new Vue({
             .then(response => {
                 this.programs = response.data;
             })
-            
+
     },
     methods: {
         registerSubmit() {
