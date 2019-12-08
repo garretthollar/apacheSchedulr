@@ -30,7 +30,7 @@ var register = new Vue({
                 if (response.status == 200)
                 {
                     console.log("Account created!");
-                    this.$cookies.set("jwt",response.data.access_token, "30MIN");
+                    this.$cookies.set("access_token_cookie",response.data.access_token, "30MIN");
                     console.log("cookie has bene set");
                     this.errors.push("Account created! Redirecting now.");
 

@@ -50,8 +50,8 @@ var indexLogin = new Vue({
                 if (response.status == 200)
                 {
                     console.log("we're in!");
-                    this.$cookies.set("jwt",response.data.access_token, "30MIN");
-                    console.log("cookie has bene set");
+                    this.$cookies.set("access_token_cookie",response.data.access_token, "30MIN");
+                    console.log("cookie has been set");
                     window.location.href = "/home.html";
                     
                 }
