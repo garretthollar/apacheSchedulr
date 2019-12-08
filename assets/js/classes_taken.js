@@ -1,17 +1,17 @@
 var classTable = new Vue({
     el: '#classesTaken_classTable',
     data: {
-        users:[]
+        courses:[]
     },
-    mounted: function() {
-        axios.get('https://jsonplaceholder.typicode.com/users')
+    created: function() {
+        axios.get('https://api.schedulr.xyz/my_needed')
             .then(response=> {
-                this.users = response.data;
-                console.log(response);
+                this.courses = response.data;
             })
             .catch(error => {
                 console.log(error);
             })
+        
     }
 })
 
