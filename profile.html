@@ -75,8 +75,8 @@
                                                     <div class="input-group-prepend">
                                                       <label class="input-group-text" for="inputGroupSelect01">Options</label>
                                                     </div>
-                                                    <select class="custom-select" id="inputGroupSelect01" v-modal="newMajor">
-                                                      <option selected>Choose...</option>
+                                                    <select class="custom-select" id="inputGroupSelect01">
+                                                      <option selected v-modal="newMajor">Choose...</option>
                                                       <option value="1" v-for="major in majors">{{major.name}}</option>
                                                     </select>
                                             </div>
