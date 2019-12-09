@@ -55,20 +55,16 @@
                     <div class="form-row" style="justify-content: center;">
                         <div class="col-sm-12 col-md-6"><button class="btn btn-outline-dark" type="button" data-toggle="modal" data-target="#mymodal"> Add Semester </button></div>
                     </div>
-                    <div class="table-responsive" id="classesTaken_classTable">
+                    <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
-                                        <th style="width: 50%;">Class</th>
-                                        <th style="width: 25%;">Code</th>
-                                        <th class="text-right" style="width: 25%;"></th>
+                                        <th style="width: 100%;">Program</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <tr v-for="course in courses">
-                                        <td>{{course.name}}</td>
-                                        <td>{{course.code}}</td>
-                                        <td class="d-lg-flex justify-content-lg-end"><button class="btn btn-danger btn-sm d-sm-flex justify-content-md-end justify-content-lg-end justify-content-xl-end" type="button">Delete Class</button></td>
+                                    <tr v-for="program in myMajors">
+                                        <td>{{program.name}}</td>
                                     </tr>
                                 </tbody>
                             </table>
