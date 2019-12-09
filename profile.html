@@ -71,9 +71,9 @@
                                 <div class="modal-body">
                                     <form>
                                         <div class="form-group"><label class="text-info">Semester</label>
-                                            <select class="custom-select" v-model="newMajor">
+                                            <select v-model="newMajor">
                                                     <option disabled value="">Please select one</option>
-                                                    <option>A</option>
+                                                    <option v-for="major in majors">{{major.name}}</option>
                                                     <option>B</option>
                                                     <option>C</option>
                                                   </select>
