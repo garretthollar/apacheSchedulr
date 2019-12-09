@@ -1,12 +1,10 @@
 var profile = new Vue({
     el: '#profile',
-    delimiters: ["{","}}"],
     data: {
         form: {
             FirstName:'',
-            LastName:'',
-            Email:''
         },
+        newMajor: ''
     },
     mounted: function() {
         axios.get('http://josh.danilafe.com:23450/myinfo')
@@ -19,5 +17,6 @@ var profile = new Vue({
             .catch(error => {
                 console.log(error);
             })
+        
     }
 })
