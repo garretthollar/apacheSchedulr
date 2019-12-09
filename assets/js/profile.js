@@ -4,7 +4,8 @@ var profile = new Vue({
         form: {
             FirstName:'',
         },
-        newMajor: ''
+        newMajor: '',
+        majors: []
     },
     mounted: function() {
         axios.get('http://josh.danilafe.com:23450/myinfo')
@@ -15,6 +16,13 @@ var profile = new Vue({
                 this.form.Email = response.data.Username;
             })
             .catch(error => {
+                console.log(error);
+            })
+        axios.get('https://api.schedulr.xyz/list_programs')
+            .then(response=> {
+                this.majors = response.data;
+            })
+            .catch(error=> {
                 console.log(error);
             })
         
