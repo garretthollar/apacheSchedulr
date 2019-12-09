@@ -71,15 +71,12 @@
                                 <div class="modal-body">
                                     <form>
                                         <div class="form-group"><label class="text-info">Semester</label>
-                                            <div class="input-group mb-3">
-                                                    <div class="input-group-prepend">
-                                                      <label class="input-group-text" for="inputGroupSelect01">Options</label>
-                                                    </div>
-                                                    <select class="custom-select" id="inputGroupSelect01" v-modal="newMajor">
-                                                      <option selected>Choose...</option>
-                                                      <option v-for="major in majors">{{major.name}}</option>
-                                                    </select>
-                                            </div>
+                                            <select v-model="newMajor">
+                                                    <option disabled value="">Please select one</option>
+                                                    <option>A</option>
+                                                    <option>B</option>
+                                                    <option>C</option>
+                                                  </select>
                                         </div>
                                     </form>
                                 </div>
