@@ -19,9 +19,13 @@
     <link rel="stylesheet" href="/assets/css/Profile-Edit-Form-1.css">
     <link rel="stylesheet" href="/assets/css/Profile-Edit-Form.css">
     <link rel="stylesheet" href="/assets/css/styles.css">
-<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-<script src="https://unpkg.com/vue-cookies@1.5.12/vue-cookies.js"></script>
+    <ling rel="stylesheet" href="/assets/css/autocomplete.css">
+      <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="https://unpkg.com/vue-cookies@1.5.12/vue-cookies.js"></script>
+      <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+      <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+      <script src="/assets/js/autocomplete.js"></script>
 </head>
 
 <body>
@@ -73,23 +77,28 @@
                     <form>
                         <div class="form-group">
                             <label class="text-info" style="margin-top: 5px;">Course Title</label>
-                            <div class="dropdown"><button class="btn btn-outline-dark btn-block btn-sm dropdown-toggle" data-toggle="dropdown" aria-expanded="false" type="button">Dropdown </button>
-                                <div class="dropdown-menu" role="menu"><a class="dropdown-item" role="presentation" v-for="course in courses" v-on:click="printHi">{{course.name}}</a></div>
-                            </div>
-                        </div>
-                    </form>
+                            <form autocomplete="off" action="/action_page.php">
+			      <div class="autocomplete" style="width:300px;">
+				<input id="myInput" type="text" name="myCountry" placeholder="Add Class">
+			      </div>
+			      <input type="submit">
+			    </form>
+			</div>
                 </div>
-                <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
+                </form>
             </div>
+            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button">Save</button></div>
         </div>
     </div>
-    <script>src="classes_taken.js"</script>
+</div>
+    <script src="assets/js/classes_taken.js"></script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
     <script src="/assets/js/classes_taken.js"></script>
     <script src="/assets/js/Profile-Edit-Form.js"></script>
+
 </body>
 
 </html>

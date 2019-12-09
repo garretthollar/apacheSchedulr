@@ -32,14 +32,25 @@ var scheduleModal = new Vue({
         }
     },
     mounted: function() {
-        axios.get('https://api.schedulr.xyz/my_needed', {
+        axios.get('https://api.schedulr.xyz/list_courses', {
             headers: {
                 Authorization: "Bearer " + this.$cookies.get("access_token_cookie")
             }
         })
             .then(response=> {
                 this.courses = response.data;
-                console.log(response);
+
+		list = []
+		
+		names = this.courses.map(a => a.name)
+		codes = this.courses.map(a => a.code)
+
+		for (i = 0;i < codes.length; i++){
+		    list[i] = names[i] +" ("+ codes[i] + ")";
+		}
+		
+		autocomplete(document.getElementById("myInput"), list);		
+		
             })
             .catch(error => {
                 console.log(error);
