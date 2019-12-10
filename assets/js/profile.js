@@ -79,13 +79,14 @@ var profile = new Vue({
                 if (response.status == 200)
                 {
                     console.log("Program added!");
+                    window.location.href = '/profile.html'
+                    
                 }
             })
             .catch(error => {
                 console.log(error);
                 console.log(this.$cookies.get("access_token_cookie"));
             })
-            this.getPrograms();
 
         },
         deleteProgram(course){
@@ -95,8 +96,7 @@ var profile = new Vue({
                 if (response.status == 200)
                 {
                     console.log("Program dropped!");
-                    var index = this.myMajors.indexOf(course);
-                    this.myMajors.splice(index);
+                    window.location.href = 'profile.html'
                 }
             })
             .catch(error => {
