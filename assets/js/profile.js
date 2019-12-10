@@ -16,12 +16,27 @@ var profile = new Vue({
             .catch(error=> {
                 console.log(error);
             })
-        getPrograms();
+
+        axios.get('https://api.schedulr.xyz/my_programs',{
+            headers: {
+                Authorization: "Bearer " + this.$cookies.get("access_token_cookie")
+            }
+        })
+            .then(response=> {
+                this.myMajors = response.data;
+            })
+            .catch(error=> {
+                console.log(error);
+            })
         
     },
     methods: {
         getPrograms() {
-            axios.get('https://api.schedulr.xyz/list_programs')
+            axios.get('https://api.schedulr.xyz/my_programs',{
+                headers: {
+                    Authorization: "Bearer " + this.$cookies.get("access_token_cookie")
+                }
+            })
             .then(response=> {
                 this.myMajors = response.data;
             })
@@ -30,12 +45,16 @@ var profile = new Vue({
             })
         },
         addProgram () {
-            axios.post('https://api.schedulr.xyz/add_program',{
-                headers: {
-                    Authorization: "Bearer " + this.$cookies.get("access_token_cookie")
-                },
-                prog_id: 27
-            })
+            // Find the major in the list
+            var course;
+            for (major in this.majors){
+                if (this.majors[major].name === this.newMajor){
+                    course = this.majors[major].prog_id;
+                    break;
+                }
+            }
+            
+            axios({ method: 'POST', url: 'https://api.schedulr.xyz/add_program', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {prog_id: course} })
             .then(response => {
                 if (response.status == 200)
                 {
@@ -46,6 +65,8 @@ var profile = new Vue({
                 console.log(error);
                 console.log(this.$cookies.get("access_token_cookie"));
             })
+            this.getPrograms();
+
         }
     }
 })
