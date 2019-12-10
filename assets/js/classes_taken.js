@@ -4,6 +4,7 @@ var classTable = new Vue({
         courses:[]
     },
     created: function() {
+
         axios.get('https://api.schedulr.xyz/my_taken',{
             headers: {
                 Authorization: "Bearer " + this.$cookies.get("access_token_cookie")
@@ -20,8 +21,8 @@ var classTable = new Vue({
     }
 })
 
-var scheduleModal = new Vue({
-        el: "#classesTaken_addClassModal", 
+var dropdown = new Vue({
+        el: "#classesDropdown", 
         data: {
         courses:[],
         newCourse:''
@@ -31,6 +32,7 @@ var scheduleModal = new Vue({
             console.log("Hi");
         }
     },
+       
     mounted: function() {
         axios.get('https://api.schedulr.xyz/list_courses', {
             headers: {
@@ -39,21 +41,8 @@ var scheduleModal = new Vue({
         })
             .then(response=> {
                 this.courses = response.data;
-
-		list = []
+                this.$nextTick(function(){ $('#selector').selectpicker('refresh'); });
+		})
 		
-		names = this.courses.map(a => a.name)
-		codes = this.courses.map(a => a.code)
-
-		for (i = 0;i < codes.length; i++){
-		    list[i] = names[i] +" ("+ codes[i] + ")";
-		}
-		
-		autocomplete(document.getElementById("myInput"), list);		
-		
-            })
-            .catch(error => {
-                console.log(error);
-            })
     }
 })
