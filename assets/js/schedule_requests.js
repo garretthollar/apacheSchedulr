@@ -6,25 +6,18 @@ var scheduleRequest = new Vue({
         semester:''
     },
     beforeCreate: function() {
-        console.log(this.$cookies.isKey("jwt"));
-        axios.get('http://josh.danilafe.com:23450/myinfo')
-            .then(response => {
-                console.log(response)
-                if (response.data.ID == 0){
-                    console.log("Not logged in, returning to index");
-                    window.location.href = "/index.html";
-                }
-            })
-            .catch(function(error){
-                console.log("didn't work");
-                console.log(error);
-            });
+        
     },
 
     methods: {
-        addSemester () {
+        addSemester() {
             this.semestersOff.push(this.semester);
             console.log("YEET");
         },
+        nextPage(){
+            console.log("Zoomin");
+            this.$cookies.set("maxCredits", this.maxCredits, "5MIN");
+            window.location.href = "/view_results.html";
+        }
     }
 })

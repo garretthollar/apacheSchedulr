@@ -4,19 +4,17 @@ var scheduleTable = new Vue({
         semesters:[]
     },
     mounted: function() {
-        axios.get('https://api.schedulr.xyz/gen_schedule', {
-            headers: {
-                Authorization: "Bearer " + this.$cookies.get("access_token_cookie")
-            },
-            max_classes: 4
-        })
-            .then(response=> {
-                this.semesters = response.data;
+        axios({ method: 'POST', url: 'https://api.schedulr.xyz/gen_schedule', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {max_classes: this.$cookies.get("maxCredits")} })
+            .then(response => {
+                if (response.status == 200)
+                {
+                    response.data = semesters;
+                }
             })
             .catch(error => {
                 console.log(error);
             })
-    }
+    },
 })
 
 var scheduleModal = new Vue({
