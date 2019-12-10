@@ -79,18 +79,16 @@
                             <div class="modal-body">
                                 <div class="modal-body">
                                     <form>
-                                        <div class="form-group"><label class="text-info">Semester</label>
+                                        <div class="form-group"><label class="text-info">Major</label>
                                             <select class="custom-select" v-model="newMajor">
-                                                    <option disabled value="">Please select one</option>
-                                                    <option v-for="major in majors">{{major.name}}</option>
-                                                    <option>B</option>
-                                                    <option>C</option>
-                                                  </select>
+                                                <option disabled value="">Please select one</option>
+                                                <option v-for="major in majors">{{major.name}}</option>
+                                            </select>
                                         </div>
                                     </form>
                                 </div>
                             </div>
-                            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" v-on:click="addSemester">Save</button></div>
+                            <div class="modal-footer"><button class="btn btn-light" type="button" data-dismiss="modal">Close</button><button class="btn btn-primary" type="button" v-on:click="addProgram">Save</button></div>
                         </div>
                     </div>
         </div>
