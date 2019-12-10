@@ -15,7 +15,7 @@ var classTable = new Vue({
             {
                 console.log("Class dropped!");
                 console.log(response);
-                //window.location.href = '/classes_taken.html'
+                window.location.href = '/classes_taken.html'
             }
             })
             .catch(error => {
