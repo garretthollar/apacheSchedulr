@@ -28,8 +28,32 @@ var dropdown = new Vue({
         newCourse:''
     },
     methods: {
-        printHi() {
-            console.log("Hi");
+        addClass() {
+            // Find the major in the list
+            var course;
+            for (thing in this.courses){
+                if (this.courses[thing].name === this.newCourse){
+                    course = this.courses[thing].course_id;
+                    console.log("Found course + ", course);
+                    break;
+                }
+            }
+            
+            axios({ method: 'POST', url: 'https://api.schedulr.xyz/add_taken', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {course_id: course} })
+            .then(response => {
+                if (response.status == 200)
+                {
+                    console.log("Course added!");
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                console.log(this.$cookies.get("access_token_cookie"));
+            })
+
+        }, 
+        getCourses() {
+
         }
     },
        
