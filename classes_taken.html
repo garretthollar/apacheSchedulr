@@ -53,15 +53,16 @@
             </div>
         
     </nav>
+    <div id="classesTaken_classTable">
     <div class="row" style="width: 100%;">
         <div class="col d-lg-flex justify-content-lg-start align-items-lg-end">
             <h2 class="text-left d-lg-flex justify-content-start justify-content-sm-start align-items-sm-end justify-content-md-start align-items-md-end justify-content-lg-start align-items-lg-center justify-content-xl-start" style="color: rgb(23,162,184);margin-bottom: 0px;margin-left: 5px;">Credits Obtained</h2>
         </div>
-        <div class="col d-sm-flex d-lg-flex justify-content-end justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end"><button class="btn btn-primary" type="button" style="margin: 5%;margin-top: 5%;margin-right: 0px;margin-bottom: 5%;margin-left: 5%;" data-toggle="modal" data-target="#classesTaken_addClassModal">Add Class</button><button class="btn btn-primary" type="button"
-                style="margin: 5%;">Next Step</button></div>
+        <div class="col d-sm-flex d-lg-flex justify-content-end justify-content-sm-end justify-content-md-end justify-content-lg-end justify-content-xl-end"><button class="btn btn-primary" type="button" style="margin: 5%;margin-top: 5%;margin-right: 0px;margin-bottom: 5%;margin-left: 5%;" data-toggle="modal" data-target="#classesTaken_addClassModal">Add Class</button>
+            <button class="btn btn-primary" type="button" style="margin: 5%;" v-on:click="nextStep">Next Step</button></div>
     </div>
 
-    <div class="table-responsive" id="classesTaken_classTable" data-live-search="true">
+    <div class="table-responsive" data-live-search="true">
         <table class="table">
             <thead>
                 <tr>
@@ -74,10 +75,11 @@
                 <tr v-for="course in courses">
                     <td>{{course.name}}</td>
                     <td>{{course.code}}</td>
-                    <td class="d-lg-flex justify-content-lg-end"><button class="btn btn-danger btn-sm d-sm-flex justify-content-md-end justify-content-lg-end justify-content-xl-end" type="button">Delete Class</button></td>
+                    <td class="d-lg-flex justify-content-lg-end"><button class="btn btn-danger btn-sm d-sm-flex justify-content-md-end justify-content-lg-end justify-content-xl-end" type="button" v-on:click="deleteClass(course.name, course.semester, course.year)">Delete Class</button></td>
                 </tr>
             </tbody>
         </table>
+    </div>
     </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="classesTaken_addClassModal">
         <div class="modal-dialog" role="document">

@@ -3,6 +3,30 @@ var classTable = new Vue({
     data: {
         courses:[]
     },
+    methods: {
+        deleteClass(course, semester, year) {
+            axios({ method: 'POST', url: 'https://api.schedulr.xyz/drop_taken', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {
+                "course_id": course,
+                "semester": semester,
+                "year": year
+              } })
+            .then(response => {
+            if (response.status == 200)
+            {
+                console.log("Class dropped!");
+                console.log(response);
+                //window.location.href = '/classes_taken.html'
+            }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+        },
+        nextStep(){
+            window.location.href = '/profile.html'
+        }
+    },
     created: function() {
 
         axios.get('https://api.schedulr.xyz/my_taken',{
@@ -39,21 +63,36 @@ var dropdown = new Vue({
                 }
             }
             
-            axios({ method: 'POST', url: 'https://api.schedulr.xyz/add_taken', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {course_id: course} })
+            axios({ method: 'POST', url: 'https://api.schedulr.xyz/add_taken', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {course_id: course, "semester": "SPRING",
+            "year": 2019,
+            "status": "COMPLETE",
+            "grade": "B+"} })
             .then(response => {
                 if (response.status == 200)
                 {
                     console.log("Course added!");
+                    this.getCourses();
+                    window.location.href = '/classes_taken.html';
                 }
             })
             .catch(error => {
                 console.log(error);
-                console.log(this.$cookies.get("access_token_cookie"));
             })
 
-        }, 
+        },
         getCourses() {
-
+            axios.get('https://api.schedulr.xyz/my_taken',{
+                headers: {
+                    Authorization: "Bearer " + this.$cookies.get("access_token_cookie")
+                }
+            })
+                .then(response=> {
+                    this.courses = response.data;
+                    console.log(response);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
         }
     },
        
