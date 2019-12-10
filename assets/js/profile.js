@@ -84,5 +84,8 @@ var profile = new Vue({
             })
 
         },
+        nextPage(){
+            window.location.href = '/schedule_requests';
+        },
     }
 })
