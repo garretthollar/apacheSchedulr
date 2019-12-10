@@ -4,7 +4,7 @@ var scheduleTable = new Vue({
         semesters:[]
     },
     mounted: function() {
-        axios({ method: 'POST', url: 'https://api.schedulr.xyz/gen_schedule', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {max_classes: this.$cookies.get("maxCredits")} })
+        axios({ method: 'POST', url: 'https://api.schedulr.xyz/gen_schedule', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {max_classes: parseInt(this.$cookies.get("maxCredits"),10)} })
             .then(response => {
                 if (response.status == 200)
                 {
