@@ -8,7 +8,7 @@ var scheduleTable = new Vue({
             .then(response => {
                 if (response.status == 200)
                 {
-                    semesters = response.data;
+                    this.semesters = response.data;
                     console.log("Success!");
                     console.log(response);
                 }
