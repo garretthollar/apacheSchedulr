@@ -67,6 +67,25 @@ var profile = new Vue({
             })
             this.getPrograms();
 
-        }
+        },
+        deleteProgram(course){
+            console.log(course.prog_id);
+            axios({ method: 'POST', url: 'https://api.schedulr.xyz/drop_program', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {prog_id: course.prog_id} })
+            .then(response => {
+                if (response.status == 200)
+                {
+                    console.log("Program dropped!");
+                    var index = this.myMajors.indexOf(course);
+                    this.myMajors.splice(index);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+            })
+
+        },
+        nextPage(){
+            window.location.href = '/schedule_requests';
+        },
     }
 })

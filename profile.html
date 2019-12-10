@@ -47,26 +47,25 @@
                 <div class="col-md-8 text-center">
                     <h1>Majors</h1>
                     <hr>
-                    <div class="form-row" style="justify-content: center;">
-                        <div class="col-sm-12 col-md-6"><button class="btn btn-outline-dark" type="button" data-toggle="modal" data-target="#mymodal"> Add Semester </button></div>
-                    </div>
                     <div class="table-responsive">
                             <table class="table">
                                 <thead>
                                     <tr>
                                         <th style="width: 100%;">Program</th>
+                                        <th><div class="col-sm-12 col-md-6"><button class="btn btn-outline-dark" type="button" data-toggle="modal" data-target="#mymodal"> Add Major </button></div></th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr v-for="program in myMajors">
                                         <td>{{program.name}}</td>
+                                        <td><button class="btn btn-danger btn-sm d-sm-flex justify-content-md-end justify-content-lg-end justify-content-xl-end" type="button" v-on:click="deleteProgram(program)">Delete Program</button></td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                     <hr>
                     <div class="form-row">
-                        <div class="col-md-12 content-right"><button class="btn btn-info form-btn" type="submit">SAVE </button><a class="btn btn-outline-danger form-btn" role="button" href="/home.html">CANCEL </a></div>
+                        <div class="col-md-12 content-right"><button class="btn btn-info form-btn" type="submit" v-on:click="nextPage">Continue</button><a class="btn btn-outline-danger form-btn" role="button" href="/home.html">CANCEL </a></div>
                     </div>
                 </div>
             </div>
@@ -75,7 +74,7 @@
                 <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
-                                <h4 class="modal-title">Add Semester Off</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
+                                <h4 class="modal-title">Add Major</h4><button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button></div>
                             <div class="modal-body">
                                 <div class="modal-body">
                                     <form>
