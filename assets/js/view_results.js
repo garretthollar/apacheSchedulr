@@ -1,7 +1,9 @@
 var scheduleTable = new Vue({
     el: '#viewResults_scheduleTable',
     data: {
-        semesters:[]
+        semesters:[],
+        titles: ["Spring 2020", "Fall 2020", "Spring 2021", "Fall 2021", "Spring 2022", "Fall 2022",
+                "Spring 2023", "Fall 2023", "Spring 2024", "Fall 2024"]
     },
     mounted: function() {
         axios({ method: 'POST', url: 'https://api.schedulr.xyz/gen_schedule', headers: {Authorization: "Bearer " + this.$cookies.get("access_token_cookie")}, data: {max_classes: parseInt(this.$cookies.get("maxCredits"),10)} })
