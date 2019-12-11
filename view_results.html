@@ -69,26 +69,6 @@
         </div>
     </div>
     </div>
-    <div class="table-responsive">
-        <table class="table">
-            <thead>
-                <tr>
-                    <th style="width: 30%;">Nickname</th>
-                    <th style="width: 30%;">Date Created</th>
-                    <th style="width: 30%;">Graduating Semester</th>
-                    <th style="width: 9%;">View Schedule</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr v-for="user in users">
-                    <td>{{ user.name }}<br></td>
-                    <td>{{ user.phone }}</td>
-                    <td>{{ user.email }}</td>
-                    <td><button class="btn btn-outline-info text-center" type="button" data-toggle="modal" data-target="#viewResults_scheduleModal">View</button></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
     <div class="modal fade" role="dialog" tabindex="-1" id="viewResults_scheduleModal">
         <div class="modal-dialog modal-xl modal-dialog-scrollable" role="document">
             <div class="modal-content">
