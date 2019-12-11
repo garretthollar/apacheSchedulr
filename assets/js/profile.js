@@ -107,5 +107,8 @@ var profile = new Vue({
         nextPage(){
             window.location.href = '/schedule_requests.html';
         },
+        lastPage(){
+            window.location.href = '/classes_taken.html';
+        }
     }
 })

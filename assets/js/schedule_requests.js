@@ -35,6 +35,9 @@ var scheduleRequest = new Vue({
             console.log("Zoomin");
             this.$cookies.set("maxCredits", this.maxCredits, "5MIN");
             window.location.href = "/view_results.html";
+        },
+        backPage(){
+            window.location.href="/profile.html"
         }
     }
 })

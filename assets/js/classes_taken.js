@@ -25,6 +25,9 @@ var classTable = new Vue({
         },
         nextStep(){
             window.location.href = '/profile.html'
+        },
+        lastPage(){
+            window.location.href = '/home.html';
         }
     },
     created: function() {
