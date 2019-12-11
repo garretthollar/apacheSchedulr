@@ -33,6 +33,9 @@ var scheduleRequest = new Vue({
         },
         nextPage(){
             console.log("Zoomin");
+            if(this.maxCredits === ""){
+		this.maxCredits = 4;
+		} 
             this.$cookies.set("maxCredits", this.maxCredits, "5MIN");
             window.location.href = "/view_results.html";
         },
